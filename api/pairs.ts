@@ -22,6 +22,7 @@ interface ReturnShape {
 
 export default async function (req: VercelRequest, res: VercelResponse): Promise<void> {
   try {
+    console.log('pairs.ts');
     const topPairs = await getTopPairs();
 
     const pairs = topPairs.reduce<ReturnShape>((accumulator, pair): ReturnShape => {

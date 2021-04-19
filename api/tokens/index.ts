@@ -14,6 +14,7 @@ interface ReturnShape {
 
 export default async function (req: VercelRequest, res: VercelResponse): Promise<void> {
   try {
+    console.log('tokens/index');
     const topPairs = await getTopPairs();
     console.log('tokens/index topPairs ::: ', topPairs);
     const tokens = topPairs.reduce<ReturnShape>((accumulator, pair): ReturnShape => {

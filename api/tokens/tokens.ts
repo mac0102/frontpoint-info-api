@@ -4,6 +4,7 @@ import { return200, return400, return500 } from "../../utils/response";
 import { getAddress } from "@ethersproject/address";
 
 export default async function (req: VercelRequest, res: VercelResponse): Promise<void> {
+  console.log('tokens/tokens');
   if (
     !req.query.address ||
     typeof req.query.address !== "string" ||
