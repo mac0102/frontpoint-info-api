@@ -12,7 +12,7 @@ interface ReturnShape {
     liquidity_BNB: string;
   };
 }
-
+console.log("summary");
 export default async function (req: VercelRequest, res: VercelResponse): Promise<void> {
   try {
     console.log('summary.ts');
