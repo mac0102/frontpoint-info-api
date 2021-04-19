@@ -15,9 +15,10 @@ interface ReturnShape {
 export default async function (req: VercelRequest, res: VercelResponse): Promise<void> {
   try {
     const topPairs = await getTopPairs();
-
+    console.log('tokens/index topPairs ::: ', topPairs);
     const tokens = topPairs.reduce<ReturnShape>((accumulator, pair): ReturnShape => {
       for (const token of [pair.token0, pair.token1]) {
+        console.log('tokens/index token ::: ', token);
         const tId = getAddress(token.id);
 
         accumulator[tId] = {
@@ -27,7 +28,7 @@ export default async function (req: VercelRequest, res: VercelResponse): Promise
           price_BNB: token.derivedBNB,
         };
       }
-
+      console.log('tokens/index accumulator ::: ', accumulator);
       return accumulator;
     }, {});
 
