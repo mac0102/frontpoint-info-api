@@ -21,6 +21,7 @@ export const GET_BLOCK = gql`
  * @param timestamp epoch timestamp in seconds
  */
 export async function getBlockFromTimestamp(timestamp: number): Promise<string | undefined> {
+  console.log("utils/blocks/queries.ts getBlockFromTimestamp");
   const result = await blockClient.query({
     query: GET_BLOCK,
     variables: {

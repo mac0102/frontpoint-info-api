@@ -22,7 +22,10 @@ export interface MappedDetailedPair extends Pair {
   previous24hVolumeToken1: string;
 }
 
+console.log("utils/index");
+
 export async function getTokenByAddress(address: string): Promise<Token> {
+  console.log("utils/index getTokenByAddress");
   const {
     data: { token },
     errors: tokenErrors,
@@ -42,7 +45,7 @@ export async function getTokenByAddress(address: string): Promise<Token> {
 }
 
 export async function getTopPairs(): Promise<MappedDetailedPair[]> {
-  console.log("getTopPairs");
+  console.log("utils/index getTopPairs");
   const epochSecond = Math.round(new Date().getTime() / 1000);
   const firstBlock = await getBlockFromTimestamp(epochSecond - 86400);
 
